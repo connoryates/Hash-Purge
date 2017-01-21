@@ -53,7 +53,7 @@ my $purger = Hash::Purge->new(
 ```perl
 # Empty references ok
 my $purger = Hash::Purge->new(
-    empty_refs => 0,
+    ignore_empty_refs => 0,
 );
 ```
 
@@ -62,6 +62,14 @@ By default, any exceptions raised will issue a warning and return ```undef```. I
 ```perl
 my $purger = Hash::Purge->new(
     fatal => 1,
+);
+```
+
+You can also silence the warnings:
+
+```perl
+my $purger = Hash::Purge->new(
+    warnings => 0,
 );
 ```
 
