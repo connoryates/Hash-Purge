@@ -4,24 +4,25 @@ Hash::Purge - Purge your hash data
 
 # SYNOPSIS
 
-    use Hash::Purge;
+```perl
+use Hash::Purge;
     
-    my $purger = Hash::Purge->new;
+my $purger = Hash::Purge->new;
     
-    my $hashref = {
-        key1 => 'bar',
-        key2 => undef,
-        key3 => {
-            key5 => undef,
-            key6 => 7,
-            key7 => {},
-        },
-        key4 => [undef, 3, 6],
-    };
+my $hashref = {
+    key1 => 'bar',
+    key2 => undef,
+    key3 => {
+        key5 => undef,
+        key6 => 7,
+        key7 => {},
+    },
+    key4 => [undef, 3, 6],
+};
 
-    my $cleaned_hashref = $purger->purge($hashref);
+my $cleaned_hashref = $purger->purge($hashref);
     
-    # -- OUTPUT --
+# -- OUTPUT --
     
     {
         key1 => 'bar',
@@ -30,6 +31,7 @@ Hash::Purge - Purge your hash data
         },
         key4 => [3, 6],
     }
+```
 
 # DESCRIPTION
 
